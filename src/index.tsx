@@ -13,7 +13,11 @@ const LINKING_ERROR =
 
 type RnApiVideoProps = {
   color: string;
+  videoId: string;
   style: ViewStyle;
+  autoplay?: boolean;
+  isPlaying?: boolean;
+  isMuted?: boolean;
 };
 
 const ComponentName = 'RnApiVideoView';
