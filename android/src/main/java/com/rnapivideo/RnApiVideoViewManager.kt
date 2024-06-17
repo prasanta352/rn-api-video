@@ -69,9 +69,13 @@ class RnApiVideoViewManager : SimpleViewManager<View>() {
       if (it == null) {
         return
       }
+      try {
+        it.videoOptions = VideoOptions(videoId, VideoType.VOD)
+        println("it.autoplay: ${it.autoplay} ${it.isPlaying}")
+      } catch (e: Exception) {
+        println("Error: $e")
+      }
 
-      it.videoOptions = VideoOptions(videoId, VideoType.VOD)
-      println("it.autoplay: ${it.autoplay} ${it.isPlaying}")
 //
 //      if (it.autoplay) {
 //        it.play()
